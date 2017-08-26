@@ -28,4 +28,15 @@ public class TaskJiraCompanyController {
 		taskJira task = new taskJira();
 		return ResponseEntity.ok(task);
 	}
+	
+	@RequestMapping(value = "/create")
+	public void index(){
+		for (long i = 0; i < 100; i++) {
+			taskJira t = new taskJira();
+			t.setStatus("status " +i);
+			t.setName("hoang " +i);
+			t.setDescription("hoang dep trai " +i);
+			taskJiraCompany.save(t);
+		}
+	}
 }
